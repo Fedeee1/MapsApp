@@ -5,13 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MainActivity">
+    tools:context=".views.MapsActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerCountries"
+    <fragment
+        android:id="@+id/mapCountry"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"/>
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
