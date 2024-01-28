@@ -1,8 +1,7 @@
 package com.example.mapsapp.model
 
-data class Country(
+data class City(
     var name: String,
     var latitude: Double,
-    var longitude: Double,
-    var city: City,
+    var longitude: Double
 )

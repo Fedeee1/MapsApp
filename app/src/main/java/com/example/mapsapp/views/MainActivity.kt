@@ -9,6 +9,7 @@ me da lo mismo la capital, la ciudad que querais, me da lo mismo, el objetivo no
 el objetivo es que controleis el boton de la celda y la celda como tal
  */
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,8 +19,14 @@ import com.example.mapsapp.adapters.RecyclerCountriesAdapter
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        lateinit var context: Context
+    }
+
     private lateinit var recyclerCountries: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
+        context = applicationContext
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

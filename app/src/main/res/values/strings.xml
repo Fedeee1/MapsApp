@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MapsApp</string>
+    <string name="txtCountryName">Nombre país</string>
+    <string name="imgOpenMap">Imagen abrir mapa</string>
 </resources>

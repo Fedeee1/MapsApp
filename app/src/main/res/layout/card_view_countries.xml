@@ -2,6 +2,8 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardCountry"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -20,16 +22,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Nombre país"
+            android:text="@string/txtCountryName"
             android:textColor="@color/white"
             android:layout_weight="1"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="20dp"
+            tools:ignore="InefficientWeight" />
 
         <ImageView
             android:id="@+id/imgOpenMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
+            android:contentDescription="@string/imgOpenMap"
             android:src="@drawable/icon_map"/>
 
     </LinearLayout>
