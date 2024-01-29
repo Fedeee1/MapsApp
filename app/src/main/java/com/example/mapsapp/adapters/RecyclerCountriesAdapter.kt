@@ -9,13 +9,13 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mapsapp.R
-import com.example.mapsapp.model.City
 import com.example.mapsapp.model.Country
 import com.example.mapsapp.views.MapsActivity
 
-class RecyclerCountriesAdapter: RecyclerView.Adapter<RecyclerCountriesAdapter.ViewHolder>() {
+class RecyclerCountriesAdapter(listCountry: List<Country>): RecyclerView.Adapter<RecyclerCountriesAdapter.ViewHolder>() {
 
-    var listCountries: MutableList<Country> = mutableListOf()
+    var listCountries = listCountry
+
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var txtCountryName: TextView
         var imgOpenMap: ImageView
@@ -25,11 +25,6 @@ class RecyclerCountriesAdapter: RecyclerView.Adapter<RecyclerCountriesAdapter.Vi
             txtCountryName = itemView.findViewById(R.id.txtCountryName)
             imgOpenMap = itemView.findViewById(R.id.imgOpenMap)
             cardCountry = itemView.findViewById(R.id.cardCountry)
-            listCountries.add(Country("España",	39.487688, -3.329312, City("Madrid",40.4165, -3.70256)))
-            listCountries.add(Country("Grecia",39.63689, 22.41761, City("Atenas",37.98376, 23.72784)))
-            listCountries.add(Country("Francia",46.631562, 2.455594 ,City("París",48.85341, 2.3488)))
-            listCountries.add(Country("Italia", 43.026987, 12.458934 ,City("Roma", 41.900905, 12.495224)))
-            listCountries.add(Country("Portugal", 39.670077, -8.756265, City("Lisboa", 38.724021, -9.143980)))
         }
     }
 
@@ -37,7 +32,6 @@ class RecyclerCountriesAdapter: RecyclerView.Adapter<RecyclerCountriesAdapter.Vi
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_view_countries, parent, false)
         return ViewHolder(view)
     }
-
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         viewHolder.txtCountryName.text = listCountries[position].name
@@ -67,6 +61,6 @@ class RecyclerCountriesAdapter: RecyclerView.Adapter<RecyclerCountriesAdapter.Vi
         }
     }
     override fun getItemCount(): Int {
-        return 5
+        return listCountries.size
     }
 }

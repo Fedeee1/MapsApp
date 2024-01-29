@@ -12,31 +12,45 @@ el objetivo es que controleis el boton de la celda y la celda como tal
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mapsapp.R
 import com.example.mapsapp.adapters.RecyclerCountriesAdapter
+import com.example.mapsapp.viewModels.MapViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.mapsapp.model.Country
+import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
-
     companion object{
         lateinit var context: Context
     }
 
+    private val viewModel by viewModels<MapViewModel>()
     private lateinit var recyclerCountries: RecyclerView
+    var listCountries: List<Country> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         context = applicationContext
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initAdapter()
+        viewModel.viewModelScope.launch {
+            viewModel.listCountriesFlow.collect{
+                listCountries = it
+            }
+        }
+        initAdapter(listCountries)
     }
 
-    private fun initAdapter(){
+    private fun initAdapter(listCountries: List<Country>){
         recyclerCountries = findViewById(R.id.recyclerCountries)
-        val adapter = RecyclerCountriesAdapter()
+        val adapter = RecyclerCountriesAdapter(listCountries)
         recyclerCountries.layoutManager = LinearLayoutManager(this)
         recyclerCountries.adapter = adapter
     }
+
 }

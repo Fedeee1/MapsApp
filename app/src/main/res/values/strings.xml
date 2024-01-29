@@ -2,4 +2,6 @@
     <string name="app_name">MapsApp</string>
     <string name="txtCountryName">Nombre país</string>
     <string name="imgOpenMap">Imagen abrir mapa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -15,6 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
+
     private lateinit var map: GoogleMap
     private var cityName = " "
     private var cityLatitude = 0.0
@@ -56,7 +57,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun getLocation(name: String, lat: Double, long: Double, isCountry: Boolean){
         val coordinates = LatLng(lat, long)
         val city = MarkerOptions().position(coordinates).title(name)
-        val zoom: Float = if (isCountry){
+        val zoom: Float =
+            if (isCountry){
             COUNTRY_ZOOM
         } else {
             CITY_ZOOM
