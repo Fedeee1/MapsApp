@@ -1,4 +1,4 @@
-package com.example.mapsapp.views
+package com.example.mapsapp.mapModule.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,7 +14,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
-
 
     private lateinit var map: GoogleMap
     private var cityName = " "

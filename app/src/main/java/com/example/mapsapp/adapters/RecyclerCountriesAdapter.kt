@@ -10,11 +10,11 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mapsapp.R
 import com.example.mapsapp.model.Country
-import com.example.mapsapp.views.MapsActivity
+import com.example.mapsapp.mapModule.views.MapsActivity
 
 class RecyclerCountriesAdapter(listCountry: List<Country>): RecyclerView.Adapter<RecyclerCountriesAdapter.ViewHolder>() {
 
-    var listCountries = listCountry
+    private var listCountries = listCountry
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var txtCountryName: TextView

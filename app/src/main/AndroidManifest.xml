@@ -22,10 +22,10 @@
             android:value="@string/google_maps_key"/>
 
         <activity
-            android:name=".views.MapsActivity"
+            android:name=".mapModule.views.MapsActivity"
             android:exported="false" />
         <activity
-            android:name=".views.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

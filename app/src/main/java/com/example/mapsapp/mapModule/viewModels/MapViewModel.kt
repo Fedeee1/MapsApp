@@ -1,13 +1,12 @@
-package com.example.mapsapp.viewModels
+package com.example.mapsapp.mapModule.viewModels
 
 import androidx.lifecycle.ViewModel
 import com.example.mapsapp.model.City
 import com.example.mapsapp.model.Country
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flow
 
-class MapViewModel() : ViewModel() {
+class MapViewModel() : ViewModel(){
 
     private var listCountries: MutableList<Country> = mutableListOf()
 

@@ -1,4 +1,4 @@
-package com.example.mapsapp.views
+package com.example.mapsapp
 
 /*
 aparece un listado de paises en una tabla.
@@ -15,9 +15,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mapsapp.R
 import com.example.mapsapp.adapters.RecyclerCountriesAdapter
-import com.example.mapsapp.viewModels.MapViewModel
+import com.example.mapsapp.mapModule.viewModels.MapViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mapsapp.model.Country
 import kotlinx.coroutines.launch
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<MapViewModel>()
     private lateinit var recyclerCountries: RecyclerView
-    var listCountries: List<Country> = mutableListOf()
+    private var listCountries: List<Country> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         context = applicationContext
